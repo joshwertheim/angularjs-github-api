@@ -1,0 +1,30 @@
+body {
+    padding: 0.5em;
+}
+
+button {
+    display: block;
+    margin: 0.5em;
+}
+
+label {
+    display: inline-block;
+    margin: 0.5em;
+}
+
+section {
+    padding: 1em;
+    border: 1px solid #ddd;
+}
+
+.message {
+  font-style: italic;
+}
+
+.sha, .author {
+    font-size: 11px;
+}
+
+#search {
+    border: 1px solid #ddd;
+}

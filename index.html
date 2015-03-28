@@ -1,1 +1,31 @@
-My Page
+<!doctype html>
+<html lang="en" ng-app="gitApp">
+<head>
+    <meta charset="utf-8">
+    <title>GitHub, 10 recent commits</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+</head>
+
+<body ng-controller="rootController">
+
+    <section id="search">
+        <label>Repo Owner:<br><input ng-model="owner" type="text" placeholder="42debut"></input></label>
+        <label>Repo Name:<br><input ng-model="repo" type="text" placeholder="fakeRepo"></input></label>
+        <button ng-click="submit()">Get Commits!</button>
+    </section>
+    <section id="results">
+        <h3>Commits</h3>
+        <ul>
+            <li>
+                <div class="message">Some commit message...</div>
+                <div class="sha">Commit: <a href="#">27bded6ac843397a074c8ead87220683951fa22d</a></div>
+                <div class="author">Author: <a href="#">John Doe</a></div>
+            </li>
+            <br>
+        </ul>
+    </section>
+  </body>
+  </html>

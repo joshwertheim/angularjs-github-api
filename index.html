@@ -19,10 +19,10 @@
     <section id="results">
         <h3>Commits</h3>
         <ul>
-            <li>
-                <div class="message">Some commit message...</div>
-                <div class="sha">Commit: <a href="#">27bded6ac843397a074c8ead87220683951fa22d</a></div>
-                <div class="author">Author: <a href="#">John Doe</a></div>
+            <li ng-repeat="commit in commits">
+                <div class="message">{{commit.commit.message}}</div>
+                <div class="sha">Commit: <a href="#">{{commit.sha}}</a></div>
+                <div class="author">Author: <a href="#">{{commit.commit.author.name}}</a></div>
             </li>
             <br>
         </ul>

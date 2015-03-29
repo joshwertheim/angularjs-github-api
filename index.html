@@ -20,30 +20,21 @@
     </section>
     <section id="results">
         <h3>Commits</h3>
-        <small ng-hide="!most">{{most}} has the most commits!</small>
-        <ul>
-        <div ng-show="showEx">
-            <li>
-                  <div class="message">Some commit message...</div>
-                  <div class="sha">Commit: <a href="#">27bded6ac843397a074c8ead87220683951fa22d</a></div>
-                  <div class="author">Author: <a href="#">John Doe</a></div>
-                </li>
-                <br>
-              <li>
-                  <div class="message">Another commit message...</div>
-                  <div class="sha">Commit: <a href="#">24c8ded6ac843377bd97a07220683951fa22ead8</a></div>
-                  <div class="author">Author: <a href="#">Dude Bro</a></div>
-                </li>
-                <br>
-                <li>... and 8 more</li>
-        </div>
-            <li ng-repeat="commit in commits">
-                <div class="message">{{commit.commit.message}}</div>
-                <div class="sha">Commit: <a href="https://github.com/{{owner}}/{{repo}}/commit/{{commit.sha}}">{{commit.sha}}</a></div>
-                <div class="author">Author: <a href="{{commit.author.html_url}}">{{commit.commit.author.name}}</a></div>
-            </li>
-            <br>
-        </ul>
+        <small ng-hide="!most"><strong>{{most}}</strong> has the most commits!</small>
+        <dl ng-show="showEx">
+            <dt class="message">Some commit message...</dt>
+            <dd class="sha">Commit: <a href="#">27bded6ac843397a074c8ead87220683951fa22d</a></dd>
+            <dd class="author">Author: <a href="#">John Doe</a></dd>
+            <dt class="message">Another commit message...</dt>
+            <dd class="sha">Commit: <a href="#">24c8ded6ac843377bd97a07220683951fa22ead8</a></dd>
+            <dd class="author">Author: <a href="#">Dude Bro</a></dd>
+            <dt>... and 8 more</dt>
+        </dl>
+        <dl>
+            <dt class="message" ng-repeat-start="commit in commits">{{commit.commit.message}}</dt>
+            <dd class="sha">Commit: <a href="https://github.com/{{owner}}/{{repo}}/commit/{{commit.sha}}">{{commit.sha}}</a></dd>
+            <dd class="author" ng-repeat-end>Author: <a href="{{commit.author.html_url}}">{{commit.commit.author.name}}</a></dd>
+        </dl>
     </section>
   </body>
   </html>

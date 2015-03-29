@@ -1,5 +1,10 @@
-li {
-    padding: 0.5em;
+dl {
+    margin-left: 2em;
+}
+
+dt {
+    font-weight: normal;
+    padding-top: 1.5em;
 }
 
 body {

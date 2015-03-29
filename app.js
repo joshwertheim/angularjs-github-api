@@ -16,7 +16,7 @@ gitApp.controller('rootController', ['$window', '$scope', '$log', '$http', funct
 
         	var arrayLength = $scope.commits.length;
         	var authors = {};
-        	var max = 0;
+        	var currentLargest = 0;
         	$scope.most = '';
 
         	for (var i = 0; i < arrayLength; i++) {
@@ -24,12 +24,12 @@ gitApp.controller('rootController', ['$window', '$scope', '$log', '$http', funct
 
         	    if(name in authors) {
         	    	authors[name] = authors[name] + 1;
-        	    	if(authors[name] > max) {
-        	    		max = authors[name];
+        	    	if(authors[name] > currentLargest) {
+        	    		currentLargest = authors[name];
         	    		$scope.most = name;
         	    	}
         	    } else {
-        	    	authors[name] = 0;
+        	    	authors[name] = 1;
         	    }
         	}
         }).

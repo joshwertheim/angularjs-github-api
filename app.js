@@ -32,6 +32,9 @@ gitApp.controller('rootController', ['$window', '$scope', '$log', '$http', funct
         	    	authors[name] = 0;
         	    }
         	}
+        }).
+        error(function(data, status) {
+            $window.alert("Invalid owner or repository name.")
         });
     };
 	

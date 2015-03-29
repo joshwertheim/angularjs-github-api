@@ -20,6 +20,7 @@
     </section>
     <section id="results">
         <h3>Commits</h3>
+        <small ng-hide="!most">{{most}} has the most commits!</small>
         <ul>
             <li ng-repeat="commit in commits">
                 <div class="message">{{commit.commit.message}}</div>

@@ -12,17 +12,19 @@
 <body ng-controller="rootController">
 
     <section id="search">
-        <label>Repo Owner:<br><input ng-model="owner" type="text" placeholder="42debut"></input></label>
-        <label>Repo Name:<br><input ng-model="repo" type="text" placeholder="fakeRepo"></input></label>
-        <button ng-click="submit()">Get Commits!</button>
+    <form name="inputForm">
+        <label>Repo Owner:<br><input ng-model="owner" type="text" placeholder="42debut" required></input></label>
+        <label>Repo Name:<br><input ng-model="repo" type="text" placeholder="fakeRepo" required></input></label>
+        <button ng-click="submit()" ng-disabled="inputForm.$invalid">Get Commits!</button>
+    </form>
     </section>
     <section id="results">
         <h3>Commits</h3>
         <ul>
             <li ng-repeat="commit in commits">
                 <div class="message">{{commit.commit.message}}</div>
-                <div class="sha">Commit: <a href="#">{{commit.sha}}</a></div>
-                <div class="author">Author: <a href="#">{{commit.commit.author.name}}</a></div>
+                <div class="sha">Commit: <a href="https://github.com/{{owner}}/{{repo}}/commit/{{commit.sha}}">{{commit.sha}}</a></div>
+                <div class="author">Author: <a href="{{commit.author.html_url}}">{{commit.commit.author.name}}</a></div>
             </li>
             <br>
         </ul>

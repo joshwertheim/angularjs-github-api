@@ -6,13 +6,10 @@ gitApp.controller('rootController', ['$window', '$scope', '$http', function($win
 
 	$scope.submit = function() {
 		$scope.apiUrl = "https://api.github.com/repos/" + $scope.owner + "/" + $scope.repo + "/commits?page=1&per_page=10";
-        // $window.alert($scope.apiUrl);
 
         $http.get($scope.apiUrl).success(function(data) {
         	$scope.commits = data;
         });
-
-        console.log($scope.query);
     };
 	
 }]);

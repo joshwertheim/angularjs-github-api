@@ -15,6 +15,8 @@
     <form name="inputForm">
         <label>Repo Owner:<br><input ng-model="owner" type="text" placeholder="42debut" required></input></label>
         <label>Repo Name:<br><input ng-model="repo" type="text" placeholder="fakeRepo" required></input></label>
+        <div id="check"><input type="checkbox" ng-model="showTopContributor"></input>
+        <tt>Show top contributor</tt></div>
         <button ng-click="submit()" ng-disabled="inputForm.$invalid">Get Commits!</button>
     </form>
     </section>
